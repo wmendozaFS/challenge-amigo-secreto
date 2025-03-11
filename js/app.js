@@ -49,6 +49,7 @@ function agregaAlistaAmigos() {
       }
    }
    limpiarInput();
+   console.log(listaAmigos.length);
    return;
 }
 
@@ -58,15 +59,19 @@ function sorteaAmigoSecreto() {
    indiceLista = Math.floor(Math.random() * cantidadAmigosenLista) +1;
    amigoSecreto = listaAmigos[indiceLista];
    document.querySelector("#resultado").textContent=amigoSecreto;
-   document.querySelector("#jugar").setAttribute('disabled','true');
-   document.querySelector("#reiniciar").setAttribute('disabled','false');
+   document.querySelector("#jugar").setAttribute("disabled","true");
+   document.querySelector("#reiniciar").setAttribute("disabled","false");
+   console.log(listaAmigos.length);
+   console.log(indiceLista);
    return amigoSecreto
 }
 
 function reiniciarJuego() {
    //limpiar caja
+
    document.querySelector("#listaAmigos").textContent="";
    document.querySelector("#resultado").textContent="";
    document.querySelector('#reiniciar').setAttribute('disabled','true');
-   
+   listaAmigos = [];
+   console.log(listaAmigos.length);
 }
