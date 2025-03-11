@@ -60,7 +60,9 @@ function sorteaAmigoSecreto() {
    amigoSecreto = listaAmigos[indiceLista];
    document.querySelector("#resultado").textContent=amigoSecreto;
    document.querySelector("#jugar").setAttribute("disabled","true");
-   document.querySelector("#reiniciar").setAttribute("disabled","false");
+   document.querySelector("#jugar").setAttribute("style","background-color: gray;");
+   document.querySelector("#añadir").setAttribute("disabled","true");
+   document.querySelector("#añadir").setAttribute("style","background-color: gray;");
    console.log(listaAmigos.length);
    console.log(indiceLista);
    return amigoSecreto
@@ -71,7 +73,12 @@ function reiniciarJuego() {
 
    document.querySelector("#listaAmigos").textContent="";
    document.querySelector("#resultado").textContent="";
-   document.querySelector('#reiniciar').setAttribute('disabled','true');
+   document.querySelector("#jugar").setAttribute("disabled","false");
+   document.querySelector("#jugar").setAttribute("style","var(--color-button)");
+   document.querySelector("#añadir").setAttribute("disabled","false");
+   document.querySelector("#añadir").setAttribute("style","background-color: var(--color-tertiary)");
+   document.querySelector("#reiniciar").setAttribute("disabled","true");
+   document.querySelector("#reiniciar").setAttribute("style","background-color:var(--color-disabled)");
    listaAmigos = [];
    console.log(listaAmigos.length);
 }
