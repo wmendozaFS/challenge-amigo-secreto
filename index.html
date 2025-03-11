@@ -16,11 +16,11 @@
 <body>
     <main class="main-content">
         <header class="header-banner">
-            <h1 class="main-title"></h1>
+            <h1 id="titulo" class="main-title"></h1>
             <img src="./img/Amigos.png" alt="Imagen representativa de amigos celebrando">
         </header>
         <section class="input-section">
-            <h2 class="section-title"></h2>
+            <h2 id="titulo2" class="section-title"></h2>
             <div class="input-wrapper">
                 <input type="text" id="amigo" class="input-name" placeholder="Escribe un nombre">
                 <button class="button-add" onclick="agregaAlistaAmigos()">Añadir</button>
@@ -30,11 +30,16 @@
             <ul id="resultado" class="result-list" aria-live="polite"></ul>
 
             <div class="button-container">
-                <button class="button-draw" onclick="sortearAmigo()" aria-label="Sortear amigo secreto">
+                <button id="Jugar" class="button-draw" onclick="sorteaAmigoSecreto()" aria-label="Sortear amigo secreto">
                     <img src="./img/play_circle_outline.png" alt="Ícono para sortear">
                     Sortear amigo
                 </button>
+                <button id="reiniciar" class="button-draw" onclick="reiniciarJuego()" aria-label="Sortear amigo secreto">
+                    <img src="./img/reinicio.png" alt="Ícono para reinicicar">
+                    Reiniciar Juego
+                </button>
             </div>
+            
         </section>
 
     </main>
