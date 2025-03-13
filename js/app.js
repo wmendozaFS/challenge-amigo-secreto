@@ -59,24 +59,30 @@ function sorteaAmigoSecreto() {
    indiceLista = Math.floor(Math.random() * cantidadAmigosenLista) +1;
    amigoSecreto = listaAmigos[indiceLista];
    document.querySelector("#resultado").textContent=amigoSecreto;
-   document.querySelector("#jugar").setAttribute("disabled","true");
-   document.querySelector("#jugar").setAttribute("style","background-color: var(--color-disabled)");
-   document.querySelector("#añadir").setAttribute("disabled","true");
-   document.querySelector("#añadir").setAttribute("style","background-color: var(--color-disabled)");
+   let cont=document.getElementById("jugar"); //disable   
+   disableClicks(cont);
+   //document.querySelector("#jugar").setAttribute("disabled","true");
+   //document.querySelector("#jugar").setAttribute("style","background-color: var(--color-disabled)");
+   //document.querySelector("#añadir").setAttribute("disabled","true");
+   //document.querySelector("#añadir").setAttribute("style","background-color: var(--color-disabled)");
    console.log(listaAmigos.length);
    console.log(indiceLista);
    return amigoSecreto
 }
-
+function disableClicks() {
+   cont.style.pointerEvents = "none";
+ }
+ function enableClicks() {
+   cont.style.pointerEvents = "auto";
+ }
 function reiniciarJuego() {
    //limpiar caja
-
    document.querySelector("#listaAmigos").textContent="";
    document.querySelector("#resultado").textContent="";
-   document.querySelector("#jugar").setAttribute("enabled","true");
-   document.querySelector("#jugar").setAttribute("style","background-color:var(--color-button)");
-   document.querySelector("#añadir").setAttribute("style","background-color: var(--color-tertiary)");
-   document.querySelector("#añadir").setAttribute("enabled","true");
+   document.querySelector("#jugar").setAttribute("class","button-draw");
+   document.querySelector("#jugar").removeAttribute("disabled");
+   document.querySelector("#añadir").setAttribute("class","button-add");
+   document.querySelector("#añadir").setAttribute("disabled","false");
    document.querySelector("#reiniciar").setAttribute("disabled","true");
    document.querySelector("#reiniciar").setAttribute("style","background-color:var(--color-disabled)");
    listaAmigos = [];
